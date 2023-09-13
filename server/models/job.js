@@ -1,4 +1,4 @@
-const { Model, DataTyoes, Sequelize} = require('sequelize');
+const { Model, DataTypes, Sequelize} = require('sequelize');
 
 
 
@@ -23,7 +23,7 @@ job_title: {
     allowNull: false
 },
 description: {
-    type: DataTypes.STRING(120),
+    type: DataTypes.TEXT,
     allowNull: false
 },
 salary: {
@@ -45,11 +45,24 @@ location: {
 job_type: {
     type: DataTypes.STRING,
     allowNull: false
-}
+}, 
+
+    applicantID: {
+        type: DataTypes.INTEGER,
+       reference: {
+         model: "Users",
+            key:"id"
+        }
+    }
+    
+
+
 }, 
 {
     sequelize,
-    modelName: 'Jobs'
+    //freezeTableName: true,
+    //modelName: 'Jobs',
+    //underscored: true
 
 });
 

@@ -14,7 +14,7 @@ id: {
     autoIncrement: true
 },
 firstName: {
-    DataTypes: DataTypes.STRING,
+    type: DataTypes.STRING,
     allowNull: false,
     
 },
@@ -28,12 +28,16 @@ occupation: {
 },
 appied_jobs: {
     type: DataTypes.STRING
-}
+},
+
+
+
 
 },
 {
 sequelize,
-modelName: 'user'
+modelName: 'user',
+underscored: true
 
 
 })

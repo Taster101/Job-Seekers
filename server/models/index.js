@@ -1,5 +1,15 @@
-const { Job } =  require('./job')
-const { User }  = require('./user')
+const  Job =  require('./job')
+const User   = require('./user')
 
 
 
+Job.hasMany(User, {
+    foreignKey: "applicant"
+})
+
+User.belongsTo(Job, {
+    foreignKey: 'applicant'
+})
+
+
+module.exports = {User , Job}
