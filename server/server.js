@@ -2,19 +2,25 @@ const express = require('express')
 const app = express()
 const PORT = 3001;
 const routes = require('../routes')
-const Models = require('./models')
+//const Models = require('./models')
 const sequelize = require('./config/connection')
 
-app.use(routes);
-/// need to make a 
+
+//Needed for post request
 app.use(express.json())
 app.use(express.urlencoded({extended: true}));
+app.use(routes);
+/// need to make a 
+
+app.get('/',(req,res)=> {
+    res.sendFile(path.join(__dirname,'../client/build/index.html'))
+})
 
 
 //
 //app.use(express.static('client'));
 
-sequelize.sync().then(() => {
+sequelize.sync({force: true}).then(() => {
 app.listen(PORT, () => 
 
 
