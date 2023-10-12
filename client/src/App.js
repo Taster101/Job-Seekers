@@ -1,10 +1,14 @@
+import  Nav  from './components/Nav'
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-   <div> Hello</div>
+    
+   <div> 
+
+    <Nav/>
+    Hell</div>
   );
 }
 

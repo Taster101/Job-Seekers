@@ -1,11 +1,11 @@
-const {Model, DataTypes, Sequelize} = require('sequelize')
+const {Model, DataTypes} = require('sequelize')
 
 const sequelize = require('../config/connection')
 
 
-class Users extends Model {}
+class Userss extends Model {}
 
-Users.init({
+Userss.init({
 
 id: {
     type: DataTypes.INTEGER,
@@ -13,12 +13,12 @@ id: {
     primaryKey: true,
     autoIncrement: true
 },
-firstName: {
+firstname: {
     type: DataTypes.STRING,
     allowNull: false,
     
 },
-lastName: {
+lastname: {
     type: DataTypes.STRING,
     allowNull: false
 },
@@ -42,4 +42,4 @@ underscored: true
 
 })
 
-module.exports = Users;
+module.exports = Userss;
